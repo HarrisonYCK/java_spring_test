@@ -25,11 +25,4 @@ public class UserDataAccessService implements UserDetailsService {
 
         return new UserPrincipal(user);
     }
-
-    @PostConstruct
-    public void addUser(){
-        BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-        User user = new User((long) 1,"user", "abc@abc.com", passwordEncoder.encode("password"));
-        repo.save(user);
-    }
 }
