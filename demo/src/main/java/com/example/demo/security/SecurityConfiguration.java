@@ -21,7 +21,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.inMemoryAuthentication()
                 .withUser("user")
-                .password("{noop}pass") // Spring Security 5 requires specifying the password storage format
+                .password("{noop}password") // Spring Security 5 requires specifying the password storage format
                 .roles("USER");
     }
 }
